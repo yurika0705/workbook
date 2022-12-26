@@ -1,8 +1,9 @@
-input = gets.to_i
-  if input <= 0
-    puts "0以下の数字です"
-  elsif input <= 10
-    puts "10以下の数字です"
-  else
-    puts "10より大きい数字です"
+fruits_price = [["apple", [200, 250, 220]], ["orange", [100, 120, 80]], ["melon", [1200, 1500]]]
+
+fruits_price.each do |fruit| ←ruits_priceから["apple", [200, 250, 220]]という値を取り出し、変数fruitに代入
+  sum = 0
+  fruits[1].each do |price|  ←fruitの1番目の値[200, 250, 220]から値を1つずつ取り出す
+    sum += price             ←自己代入しながらsumを出力
   end
+  puts "#{fruit[0]}の合計金額は#{sum}円です"
+end
