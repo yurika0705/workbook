@@ -1,13 +1,8 @@
-def check_name(str) 
-  if check_name.include? " "
-    puts "!エラー!空白は登録できません"
-  elsif check_name.include? "."
-    puts "!エラー!記号は登録できません"
+input = gets.to_i
+  if input <= 0
+    puts "0以下の数字です"
+  elsif input <= 10
+    puts "10以下の数字です"
   else
-    puts "登録が完了しました"
+    puts "10より大きい数字です"
   end
-end
-
-puts "登録したい名前を入力してください(例)YamadaTaro"
-str = gets
-check_name(str) 
