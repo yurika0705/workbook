@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
+def extra_end(str)
+  sum = str.slice(-2,2)
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+  3.times do
+    puts sum
+  end
+end
+extra_end('Hello')
+
+def extra_end(str)
+  right2 = str.slice(- 2, 2)
+  puts right2 * 3
+end
+
+# 呼び出し例
+extra_end('Hello') 
+
+
+def extra_end(str)
+  right2 = str.slice(-2, 2)
+  puts right2 * 3
+end
+
+extra_end("Hello")
