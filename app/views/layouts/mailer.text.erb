@@ -1,10 +1,12 @@
-def police_trouble(a, b)
-  if (a && b) || (a == b)
-    puts "True"
-  else
-    puts "False"
-  end
+def count_hi(str)
+  array = str.scan("hi")
+  p array.length
 end
-police_trouble(true, true) 
-police_trouble(false, false)
-police_trouble(true, false) 
+
+count_hi('abc hi ho')
+
+
+def count_hi(str)
+  puts str.scan("hi").length
+end
+count_hi('abc hi ho')
