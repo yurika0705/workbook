@@ -1,9 +1,10 @@
-def parrot_trouble(talking, hour)
-  if talking && (hour < 7 || hour > 20 )
-    p "NG"
-  else
-    p "OK"
+def count_evens(num)
+sum = 0
+  num.each do |n|
+    if n.even?
+      sum += 1
   end
+  p sum
 end
 
-parrot_trouble(true, 6)
+count_evens = gets.to_i
