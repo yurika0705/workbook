@@ -1,10 +1,26 @@
-def num(a, b, c)
-  ab = a + b
-  if c <= 3
-    puts ab / c
+def calculate_points(a, b)
+  if (a <= 999) && (b == true)
+    puts (a * 1.5).floor
+  elsif (a <= 999)
+    puts (a * 0.3).floor
+  elsif (a >= 1000) && (b == true)
+    puts (a * 2.5).floor
   else
-    puts ab * c
+    puts (a * 0.5).floor
+  end
 end
 
-num(1,5,3) 
-num(1,5,5)
+calculate_points(amount, is_birthday)
+
+
+def calculate_points(a, b)
+  if a <= 999
+    point = a * 0.3
+  else
+    point = a * 0.5
+  end
+  if b
+    point = point * 5
+  end
+  puts "ポイントは#{point.floor}点です"   <%# .floorで小数点切り捨て %>
+end
