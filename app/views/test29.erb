@@ -1,0 +1,23 @@
+def lone_sum(ary)
+  uniq_nums = []  <%# 空の箱を用意 %>
+  ary.each do |num| <%# aryの中からnumを一つづつ取り出し繰り返し処理 %>
+    count = 0
+    ary.each do |i| <%# aryから取り出した数字がnumと重複している場合はカウントを1追加 %>
+      if num == i
+        count += 1
+      end
+    end
+    if count < 2  <%# カウントが2より少なければ(重複していない数字)その数字をuniq_numsに入れる %>
+      uniq_nums << num
+    end
+  end
+
+  sum = 0
+  uniq_nums.each do |uniq_num|  <%# uniq_numsから数字を一つづつ取り出しsumに代入 %>
+    sum += uniq_num
+  end
+  puts sum  <%# sum(合計値)を出力 %>
+end
+
+# 呼び出し例
+lone_sum([1, 2, 3])
