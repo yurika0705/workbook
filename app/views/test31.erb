@@ -1,0 +1,29 @@
+def near_ten(num)
+place_100 = (num / 100) % 10
+place_10 = (num / 10) % 10
+place_1 = num % 10
+addition_result = (place_100 + place_10 + place_1)
+multiple_result = addition_result % 10
+if multiple_result >= 2
+  puts "10の倍数との差は#{10 - multiple_result}です"
+else multiple_result <= 2
+  puts "True"
+end 
+end
+
+near_ten = gets.to_i
+
+
+<%# 模範回答 %>
+
+def near_ten(num)
+  total = (num/100) + (num/10 % 10) + (num % 10)  <%# 各位の和を出し片酢totalに代入 %>
+  remainder = total % 10  <%# 10で割った余を出す %>
+  if remainder <= 2 || remainder >= 8 <%# 余りが2以下または8以上であればTrueを出力 %>
+    puts "True"
+  elsif remainder <= 5  <%# 余りが5より小さければ %>
+    puts "10の倍数との差は#{remainder}です"
+  else 
+    puts "10の倍数との差は#{10 - remainder}です"  <%# 余りが5以上なら10から引いて近い方を返す %>
+  end
+end
