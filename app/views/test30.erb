@@ -1,0 +1,55 @@
+array=[1,3,5,6,9,10,13,20,26,31]
+number_of_elements = array.length
+def binary_search(array, target)
+  head = 0
+  tail = array.count - 1
+  while head <= tail
+    center = (head + tail) / 2
+    if array[center] == target
+      return "index = #{center}"
+    elsif array[center] < target
+      head = center + 1
+    else
+      tail = center -1
+    end
+  end
+  return "#{target}は配列ないに存在しません"
+end
+
+puts "検索したい数字を入力してください"
+target = gets.to_i
+
+
+<%# 模範回答 %>
+検索したい値はtarget、
+一番左側の添え字はleft、
+一番右側の添え字はright、
+真ん中の添え字はcenterに代入することとします。
+
+def binary_search(array, right, target)
+  left = 0  <%# 一番左側の添字(0番目)をleftとする%>
+  while left <= right <%# 配列の一番左側の添え字(left)が配列の一番右側の添え字(right)と同じになるまで繰り返し処理をする %>
+    center = (left + right) / 2 <%# 真ん中の位置をcenterとする %>
+    if array(center) == target  <%# もしcenterがtargetならそのindex(何番目)を返す %>
+      return center
+    elsif array[center] < target  <%# もしtargetがcenterより大きければ(右側にあれば)leftの位置をcenterより一つ右にずらす(+1) %>
+      left = center + 1
+    else
+      right = center - 1  <%# もしtartgetがcenterより小さければ(左側にあれば)centerの位置を一つ左側にずらす(-1) %>
+    end
+  end
+  return -1 <%# leftがrightと同じになったら(検索に引っ掛からず終わったら)-1を返す %>
+end
+
+array=[1,3,5,6,9,10,13,20,26,31]
+puts "検索したい数字を入力してください"
+target = gets.to_i
+number_of_elements = array.length <%# arrayの要素数を数えて変数number_of_elementsに代入 %>
+
+result = binary_search(array, number_of_elements, target) <%# binary_seach内で返された値を変数resultに代入 %>
+
+if result == -1 <%# resultの数値が−１(当てはまるものがなかった) %>
+  puts "#{target}は配列ないに存在しません"
+else
+  puts "#{target}は配列の#{result}番目に存在します"
+end
