@@ -1,8 +1,30 @@
-def near_ten(num)
-  quotient = num % 10
-  if quotient <= 2 || quotient >= 8
-    puts "True"
+def withdraw(balance, amount)
+  fee = 110
+  after_balance = balance - (amount + fee)
+  if after_balance > balance
+    puts "残高不足です"
   else
-    puts "False"
+    puts "#{amount}円引き落としました。残高は#{after_balance}円です"
   end
 end
+
+balance = 100000
+puts "いくら引き落としますか？（手数料110円かかります）"
+amount = gets.to_i
+withdraw(balance, amount)
+
+< 模範回答 >
+def withdraw(balance, amount)
+  fee = 110
+  if balance >= (amount + fee)
+    balance -= (amount + fee)
+    puts "#{amount}円引き落としました。残高は#{balance}円です"
+  else
+    puts "残高不足です"
+  end
+end
+
+balance = 100000
+puts "いくら引き落としますか？（手数料110円かかります）"
+amount = gets.to_i
+withdraw(balance, amount)
